@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-/**
+/*
  * Copyright (c) 2013-2018 OpenCFP
  *
  * For the full copyright and license information, please view
@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 use Phinx\Migration\AbstractMigration;
 
-class Favorites extends AbstractMigration
+class favorites extends AbstractMigration
 {
     public function change()
     {

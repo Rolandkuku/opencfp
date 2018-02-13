@@ -84,7 +84,7 @@ class Environment
      */
     public static function fromServer(array $server): self
     {
-        $type = $server['CFP_ENV'] ?? self::TYPE_DEVELOPMENT;
+        $type = $server['CFP_ENV'] ? ? self::TYPE_DEVELOPMENT;
 
         return new self($type);
     }
@@ -96,12 +96,12 @@ class Environment
      *
      * @return self
      */
-    public static function fromString(string $type): self
+    public static function fromString(string $type) : self
     {
         return new self($type);
     }
 
-    public function equals(self $environment): bool
+    public function equals(self $environment) : bool
     {
         return $this->type === $environment->type;
     }

@@ -129,7 +129,7 @@ abstract class Form
      */
     public function getTaintedField(string $name, $default = null)
     {
-        return $this->taintedData[$name] ?? $default;
+        return $this->taintedData[$name] ? ? $default;
     }
 
     /**
@@ -137,7 +137,7 @@ abstract class Form
      *
      * @return array
      */
-    public function getTaintedData(): array
+    public function getTaintedData() : array
     {
         return $this->taintedData;
     }
@@ -152,7 +152,7 @@ abstract class Form
      */
     public function getOption(string $name, $default = null)
     {
-        return $this->options[$name] ?? $default;
+        return $this->options[$name] ? ? $default;
     }
 
     /**
@@ -162,14 +162,14 @@ abstract class Form
      *
      * @return bool
      */
-    abstract public function validateAll(string $action = 'create'): bool;
+    abstract public function validateAll(string $action = 'create') : bool;
 
     /**
      * Returns the list of error messages.
      *
      * @return string[]
      */
-    public function getErrorMessages(): array
+    public function getErrorMessages() : array
     {
         return $this->messages;
     }
@@ -179,7 +179,7 @@ abstract class Form
      *
      * @return bool
      */
-    public function hasErrors(): bool
+    public function hasErrors() : bool
     {
         return \count($this->messages) > 0;
     }
